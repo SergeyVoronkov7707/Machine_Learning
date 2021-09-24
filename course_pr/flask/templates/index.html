@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Voronkov course</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body background='static\virus.png'>
+ <div class="login">
+     <center>
+	<h1>confirmed prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Date" placeholder="date: yyyy-mm-dd" required="required" />
+        <input type="text" name="Country" placeholder="Country" required="required" />
+		<input type="text" name="Deaths" placeholder="Deaths" required="required" />
+		<input type="text" name="Recovered" placeholder="Recovered" required="required" />
+        <input type="text" name="Active" placeholder="Active" required="required" />
+
+
+<!--        <span style="font-size: 20px;">Здесь тоже увеличенный текст.</span>-->
+        <h1>
+        <button  type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </h1>
+
+    </form>
+
+   <br>
+   <br>
+         <h1>
+   {{ prediction_text }}
+        </h1>
+     </center>
+
+ </div>
+
+
+</body>
+</html>
